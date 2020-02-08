@@ -1,0 +1,139 @@
+{{ layout "layout" }}
+
+{{ var layout.title="hello world" }}
+
+
+{{import "header"}}
+
+
+{{capture layout.footer}}
+<div style="background-color: #333;color: white;padding: 5px;">
+	<h2>this is a footer</h2>
+	test caputer element of template
+</div>
+{{end}}
+
+<style>
+.box{
+	border: 1px solid gray;
+	padding: 1px 1px 3px 1px;
+	margin: 15px
+}
+.box h2{
+	background-color: gray ;
+	padding:3px;
+	color: white;
+	margin: 1px;
+}
+</style>
+
+<div class="box">
+	<h2>static value</h2>
+	
+	{{ "string by : \\ \" \n \r \t" }}<br/>
+	{{ 123 }}<br/>
+	{{ true }}<br/>
+	a{{   }}b{{}}c
+	
+</div>
+
+
+
+
+<div class="box">
+	<h2>Show data</h2>
+	{{ str }}
+</div>
+
+<div class="box">
+	<h2>IF</h2>
+	{{ if a== 12 }}
+		 a == 12
+	{{else}}
+    	a != 12
+	{{end}}
+</div>
+
+
+<div class="box">
+	<h2>For</h2>
+	<ul>
+	{{ for v in list}}
+	    <li>list[{{ for.index }}] = {{ v }}  </li>
+	{{else}}
+	    <li> list is empty </li>
+	{{end}}
+	</ul>
+	<ul>
+	{{ for v in ass }}
+	    <li style="background-color :{{ enum for.index "#ccc" "#aaa" }};">
+	    	{{ ? for.first  "fist raw <br/>"}}
+		    ass[{{ for.key }}] = {{ v }} <br/> 
+		    
+		    is first ={{ for.first }}<br/> 
+		    is last ={{ for.last }}<br/>
+		    key ={{ for.key }}<br/>
+		    {{if for.last}} count ={{for.count}}<br/>{{end}}
+		    
+	    </li>
+	{{ end }}
+	
+	
+	</ul>
+</div>
+
+<div class="box">
+	<h2>define macro / use it</h2>
+	
+	{{ macro hello name me  }}
+	 	Hello {{ name }}, My name is {{ me }}
+	{{end}}
+	
+	{{ hello "World"  my   }}
+	</div>
+<br/>
+
+<div class="box">
+<h2>use builtin</h2>
+
+{{= 4 + 7}} = {{ 4 + 7 }}<br/>
+7-3={{ 7-3 }}<br/>
+4*7={{ 4 * 7 }}<br/>
+4/7={{ 4 / 7 }}<br/>
+7%4={{ 7 % 4 }}<br/>
+4 ~ 0={{ 4 ~ 0 }}<br/>
+1+2+3-1={{ 1 + 2 + 3 - 1 }}<br/>
+<br/>
+
+
+{{ ? true "true 1"  "false 1" }}<br/>
+
+{{  ? false "true 2"  "false 2" }}<br/>
+
+<br/>
+
+
+{{ & "&<>&%" }}<br/>
+{{ ? true "return true" "return false" }}<br/>
+{{ % "i is test url" }}<br/>
+{{ format "%s-%s-%s" 2018 9 15}}<br/>
+
+{{ format "html=%h , url=%u" "<html>" "it is a url"}}<br/>
+</div>
+
+<div class="box">
+<h2>Unicode(utf-8)</h2>
+
+این قسمت در بخش اصلی قرار دارد<br/>
+{{ "این قسمت در کد قرار دارد"  }}<br/>
+{{ text }}
+</div>
+
+
+<div class="box">
+<h2>external function</h2>
+
+
+{{ external  my  110  }}
+</div>
+

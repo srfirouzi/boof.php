@@ -1,0 +1,19 @@
+
+{{-macro form url methode items-}}
+	<form action="{{url}}" method="{{method}}">
+	{{- for item in items -}}
+		{{-if item.type == "input"-}}
+			<input type="text" name="{{item.name}}" value="{{item.value}}">
+		{{-end-}}
+		{{-if item.type == "password"-}}
+			<input type="password" name="{{item.name}}"> 
+		{{-end-}}
+		{{-if item.type == "text"-}}
+			<div>{{item.value}}</div> 
+		{{-end-}}
+		{{-if item.type == "submit"-}}
+			<div><button type="submit">{{item.value}}</button></div> 
+		{{-end-}}
+	{{-end-}}
+	</form>
+{{-end-}}
