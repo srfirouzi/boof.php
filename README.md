@@ -1,3 +1,8 @@
+<div align="center">
+  <p><b>B O O F . P H P</b></p></a>
+  <p>Boof is a simple and fast template engine for use on the web (for php)</p>
+</div>
+
 # boof.php
 
 Boof is a simple and fast template engine for use on the web (for php)
@@ -321,7 +326,7 @@ this variable define in loop block
 |for.first  |in first time is true      |
 |for.last   |in last time is true       |
 
-** first elemnt index equal 0
+first elemnt index equal 0
 
 ```
 {{ var list = split "1,2,3,4" "," }}
@@ -339,7 +344,6 @@ output
 4 - 4 <br/>
 ```
 
-
 ### macro
 
 used to define a function within the template. this function is sandbox and completely independent on the variable outside the function.
@@ -355,7 +359,6 @@ used to define a function within the template. this function is sandbox and comp
 - param1 parameter two
 - ...
 
-
 for call
 
 ```
@@ -365,7 +368,6 @@ for call
 - param1  parameter one
 - param1 parameter two
 - ...
-
 
 sample
 
@@ -389,7 +391,6 @@ bob call alice for work <br/>
 ### capture
 
 reander book of code and save in varable
-
 
 ```
 {{capture varname }}
