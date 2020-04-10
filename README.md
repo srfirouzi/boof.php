@@ -1,8 +1,3 @@
-<div align="center">
-  <p><b>B O O F . P H P</b></p></a>
-  <p>Boof is a simple and fast template engine for use on the web (for php)</p>
-</div>
-
 # boof.php
 
 Boof is a simple and fast template engine for use on the web (for php)
