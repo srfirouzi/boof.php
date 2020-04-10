@@ -2,8 +2,6 @@
 
 Boof is a simple and fast template engine for use on the web (for php)
 
-
-
 ## feature
 
 1. simple
@@ -27,7 +25,6 @@ Boof is a simple and fast template engine for use on the web (for php)
 - import_path : directory of import files for use by import bultin. if didn't set,use view path
 - layout_path : directory of layout files for use by layout bultin. if didn't set,use view path
 
-
 ```php
 $viewPath= dirname ( __FILE__ ).'/views' ;
 // import and layout file in view path
@@ -44,7 +41,6 @@ render template file and return rendering text
 
 ```php
 $boof->view('users/list',['title'=>'user list','items'=>$lists]);
-
 ```
 
 ### render(src,env=[]) 
@@ -81,7 +77,6 @@ echo $boof->render('{{hello "seyed rahim" }}');
 
 # Boof Language 
 
-
 ## TAG
 
 The tag is a piece of code that we have between the two symbols {{,}} and parts separated by space , The tag part run by template engine then return result
@@ -93,9 +88,8 @@ Each section of the template that is not a tag is a static part. static part app
 example
 
 ```
-    hello , <b> {{ your.name }} </b>
-    {{format "%s-%s-%s" 2019 1 1 }}
-
+hello , <b> {{ your.name }} </b>
+{{format "%s-%s-%s" 2019 1 1 }}
 ```
 
 if define
@@ -105,8 +99,8 @@ your.name = "Seyed Rahim Firouzi"
 output
 
 ```
-    hello , <b> Seyed Rahim Firouzi </b>
-    2019-1-1
+hello , <b> Seyed Rahim Firouzi </b>
+2019-1-1
 ```
 
 
@@ -146,7 +140,6 @@ red5
 ## Variable
 
 Each programming language needs to define a variable, and thus defines the type of variable. The Boof Template language is also not excluded. Variants of variables are
-
 
 ### null
 
@@ -197,8 +190,6 @@ sample
 {{ var data = "this is a book \n این یک کتاب هست" }}
 ```
 
-
-
 sample
 
 ```
@@ -207,8 +198,6 @@ sample
 {{ 12.34 }}
 {{ "hellow \t world" }}
 ```
-
-
 
 ## falsy value
 
@@ -225,7 +214,6 @@ falsy table
 |array  |empty array |
 |object |empty object|
 
-
 ## Control elements 
 
 ### if
@@ -235,7 +223,6 @@ use two type
 
 - with opereator
 - without opereator
-
 
 ```
 {{ if ...}}
@@ -258,7 +245,6 @@ can remove else parts
 this mode use one of operator for check or condition
 
 ```
-
 {{ if var1 operator var2}}
  part run if condition is true 
 {{ else }}
@@ -315,11 +301,9 @@ output
  chose best day,
 ```
 
-
 ### for 
 
 used "for" for define loop in template engine,in loop define variable automatically for use better than loop.
-
 
 ```
 {{ for var1 in array}}
@@ -349,10 +333,10 @@ this variable define in loop block
 output
 
 ```
-   1 - 1 <br/>
-   2 - 2 <br/>
-   3 - 3 <br/>
-   4 - 4 <br/>
+1 - 1 <br/>
+2 - 2 <br/>
+3 - 3 <br/>
+4 - 4 <br/>
 ```
 
 
@@ -424,7 +408,6 @@ reander book of code and save in varable
 
 var content is "hello,seyed rahim"
 
-
 ## items
 
 ### var
@@ -446,7 +429,6 @@ in right side you can use:
 3. Bultin
 4. user native function
 5. macro
-
 
 ```
 {{ var name = "salam"}}
@@ -496,11 +478,9 @@ function define in template engine ,list of bultin
 
 for use from  function,builtin or macro you must type function name and separate parameter after name by space, for operator don't need space after operator
 
-
 #### 
 
 for use fast way from if/else
-
 
 ```
 {{ ? condtion truePart FalsePart }}
@@ -509,7 +489,6 @@ for use fast way from if/else
 - condtion condtion
 - truePart part return if condition is true 
 - FalsePart part return if condition is true 
-
 
 sample
 
@@ -522,7 +501,6 @@ output:
 ```html
 this is true
 ```
-
 
 #### &
 
@@ -550,12 +528,9 @@ enum <number> <case zero> <case one> <case two>
 - caseTwo if number is two return this case
 - ...
 
-
-
 #### %
 
 used for encode to url (for special character like space )
-
 
 ```
 {{ % data }}
@@ -641,7 +616,6 @@ format formatedString p1 p2 p3 ...
 
 sormated string print
 
-
 example
 
 ```
@@ -684,7 +658,6 @@ used for set layout.layout is other page ,this page render than replace in layou
 1. if seted value in "layout.content" ,don't use page resoult for output
 1. this command like set valve in "layout.layout" 
 1. use file in layout directory
-
 
 # sample
 
@@ -751,7 +724,3 @@ output
 ```
 hello,world
 ```
-
-
-
- 
